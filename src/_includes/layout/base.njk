@@ -51,7 +51,10 @@
         {%- for section in sections -%}
         <div class="section">
           {% if section.image %}
-          <img class="img img-fluid" src="/public/{{ section.image }}" />
+          <img
+            class="img img-fluid"
+            src="/amyleeaudio/public/{{ section.image }}"
+          />
           {% endif %}
           <h2 class="title">{{ section.title }}</h2>
           <h4>{{ section.subtitle }}</h4>
