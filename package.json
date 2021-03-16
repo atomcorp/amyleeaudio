@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx @11ty/eleventy --input=src --output=build --serve",
-    "build": "npx @11ty/eleventy --input=src --output=build --pathprefix=amyswork"
+    "build": "npx @11ty/eleventy --input=src --output=deploy --pathprefix=amyleeaudio",
+    "deploy": "gh-pages -d deploy"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/atomcorp/amyswork#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
+    "@11ty/eleventy": "^0.11.1",
+    "gh-pages": "^3.1.0"
   }
 }
