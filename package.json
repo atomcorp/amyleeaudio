@@ -1,0 +1,24 @@
+{
+  "name": "amyswork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @11ty/eleventy --input=src --output=build --serve",
+    "build": "npx @11ty/eleventy --input=src --output=build --pathprefix=amyswork"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomcorp/amyswork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atomcorp/amyswork/issues"
+  },
+  "homepage": "https://github.com/atomcorp/amyswork#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}

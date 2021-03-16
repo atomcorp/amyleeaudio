@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amy's work</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .section {
+        margin: 60px 0;
+        padding: 0 0 60px;
+        border-bottom: 1px solid;
+      }
+      .section:last-child {
+        border-bottom: 0;
+      }
+      .page {
+        max-width: 720px;
+        margin: 60px auto;
+      }
+      .img {
+        margin: 0 0 15px;
+      }
+      .youtube {
+        margin: 0 0 15px;
+      }
+      .body {
+        font-size: 18px;
+        padding: 0 0 10px;
+      }
+      .link {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container page">
+      <h1>Amy Lee</h1>
+      <h2>Radio & Podcast Producer</h2>
+      <div>
+        {%- for section in sections -%}
+        <div class="section">
+          {% if section.image %}
+          <img class="img img-fluid" src="/public/{{ section.image }}" />
+          {% endif %}
+          <h2 class="title">{{ section.title }}</h2>
+          <h4>{{ section.subtitle }}</h4>
+          <p>{{ section.position }}</p>
+          <p class="body">
+            <em>{{ section.body | safe }}</em>
+          </p>
+          {% if section.youtube %} {%- for youtube in section.youtube -%}
+          <div class="youtube ratio ratio-16x9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/{{ youtube }}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              origin="http://localhost:8080/"
+            ></iframe>
+          </div>
+          {%- endfor -%} {% endif %} {% if section.soundcloud %} {%- for
+          soundcloud in section.soundcloud -%}
+          <div class="soundcloud">
+            <iframe
+              width="100%"
+              height="300"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              src="{{ soundcloud }}"
+            ></iframe>
+          </div>
+          {%- endfor -%} {% endif %} {% if section.link %}
+          <a class="link" href="{{ section.link }}">{{ section.linkText }}</a>
+          {% endif -%}
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </body>
+</html>
